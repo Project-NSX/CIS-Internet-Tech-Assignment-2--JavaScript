@@ -14,9 +14,6 @@ var chart = d3.select(".chart")
     .append("g")
     .attr("transform", "translate (" + margin.left + "," + margin.top + ")");
 
-// Code for tooltip from: https://bl.ocks.org/alandunning/274bf248fd0f362d64674920e85c1eb7
-var tooltip = d3.select("body").append("div").attr("class", "toolTip");
-
 // Scaled Y for vertical chart
 var y = d3.scaleLinear()
     .range([height, 0]); // Remember: up / down are flipped !
@@ -64,18 +61,7 @@ d3.csv("/data/data.csv").then(function (data) {
         .attr("height", function (d) {
             return height - y(d.frequency);
         })
-        .attr("width", x.bandwidth())
-        // Mouse over for tooltip
-        .on("mousemove", function (d) {
-            tooltip
-                .style("left", d3.event.pageX - 50 + "px")
-                .style("top", d3.event.pageY - 70 + "px")
-                .style("display", "inline-block")
-                .html("Frequency: " + "<div class='frequencyText'>" + (d.frequency) + "</div>");
-        })
-        .on("mouseout", function (d) {
-            tooltip.style("display", "none");
-        });
+        .attr("width", x.bandwidth());
 
     // Add title to chart
     chart.append("text")
