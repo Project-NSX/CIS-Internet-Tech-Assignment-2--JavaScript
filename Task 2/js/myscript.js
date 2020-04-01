@@ -29,10 +29,19 @@ var x = d3.scaleBand()
 var xAxis = d3.axisBottom().scale(x); // Positions the labels under the xAxis
 var yAxis = d3.axisLeft().scale(y); // Positions the labels to the left of the yAxisPositions the labels to the left of the yAxis
 
+// Add title to chart
+chart.append("text")
+    .attr("x", (width / 2))
+    .attr("y", 0 + (margin.top / 2))
+    .attr("text-anchor", "middle")
+    .text("Relative Frequency of Letters in the English Alphabet");
+
 // Load Data
-d3.csv("/data/data.csv").then(function (data) {
+d3.csv("/data/data.csv").then(function (data) 
+{
     // Domains
-    x.domain(data.map(function (d) {
+    x.domain(data.map(function (d) 
+    {
         return d.letter;
     }));
     y.domain([0, d3.max(data, function (d) {
@@ -76,11 +85,4 @@ d3.csv("/data/data.csv").then(function (data) {
         .on("mouseout", function (d) {
             tooltip.style("display", "none");
         });
-
-    // Add title to chart
-    chart.append("text")
-        .attr("x", (width / 2))
-        .attr("y", 0 + (margin.top / 2))
-        .attr("text-anchor", "middle")
-        .text("Relative Frequency of Letters in the English Alphabet");
 });

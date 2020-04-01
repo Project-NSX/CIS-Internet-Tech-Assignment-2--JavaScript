@@ -1,28 +1,9 @@
-.bar {
-	fill: steelblue;
-}
-
 .axis text {
 	font: 10px sans-serif;
 }
 
-.axis path,
-.axis line {
-	fill: none;
-	stroke: #000;
-	shape-rendering: crispEdges;
-}
-
-.x.axis path {
-	display: none;
-}
-
-.bar:hover {
-	fill: orangered;
-}
-
 .toolTip {
-	position: absolute;
+	position: fixed;
 	display: none;
 	min-width: 80px;
 	height: auto;
@@ -30,13 +11,34 @@
 	padding: 14px;
 	text-align: center;
 	font-weight: bold;
-	border-radius: 5px;
+	border-radius: 0px;
 	color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
 }
 
 .frequencyText {
-    color: red;
-    display: inline;
+	color: yellow;
+	display: inline;
+}
+
+/* Style the dots by assigning a fill and stroke */
+.dot {
+	fill: green;
+}
+
+.line {
+	fill: none;
+	stroke: green;
+	stroke-width: 3px;
+}
+
+.grid line {
+	stroke: lightgrey;
+	stroke-opacity: 0.7;
+	shape-rendering: crispEdges;
+}
+
+.grid path {
+	stroke-width: 0;
 }
