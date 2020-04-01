@@ -1,0 +1,44 @@
+.axis text {
+	font: 10px sans-serif;
+}
+
+.toolTip {
+	position: fixed;
+	display: none;
+	min-width: 80px;
+	height: auto;
+	background: none repeat scroll 0 0 #000000;
+	padding: 14px;
+	text-align: center;
+	font-weight: bold;
+	border-radius: 0px;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.frequencyText {
+	color: yellow;
+	display: inline;
+}
+
+/* Style the dots by assigning a fill and stroke */
+.dot {
+	fill: green;
+}
+
+.line {
+	fill: none;
+	stroke: green;
+	stroke-width: 3px;
+}
+
+.grid line {
+	stroke: lightgrey;
+	stroke-opacity: 0.7;
+	shape-rendering: crispEdges;
+}
+
+.grid path {
+	stroke-width: 0;
+}
